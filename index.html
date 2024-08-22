@@ -11,30 +11,32 @@
 <body>
     <div class="container">
         <div id="calculadora">
-            <div class="ress"><p id="textRess">teste</p></div>
+            <div class="ress"><p id="textRess"></p></div>
             <div class="btns">
-                <div class="sepBox"><p id="num">Color</p></div>
-                <div class="sepBox"><p id="num">%</p></div>
-                <div class="sepBox"><p id="num">x²</p></div>
-                <div class="sepBox"><p id="num">/</p></div>
-                <div class="sepBox"><p id="num">1</p></div>
-                <div class="sepBox"><p id="num">2</p></div>
-                <div class="sepBox"><p id="num">3</p></div>
-                <div class="sepBox"><p id="num">x</p></div>
-                <div class="sepBox"><p id="num">4</p></div>
-                <div class="sepBox"><p id="num">5</p></div>
-                <div class="sepBox"><p id="num">6</p></div>
-                <div class="sepBox"><p id="num">-</p></div>
-                <div class="sepBox"><p id="num">7</p></div>
-                <div class="sepBox"><p id="num">8</p></div>
-                <div class="sepBox"><p id="num">9</p></div>
-                <div class="sepBox"><p id="num">+</p></div>
-                <div class="sepBox"><p id="num">+/-</p></div>
-                <div class="sepBox"><p id="num">0</p></div>
-                <div class="sepBox"><p id="num">R</p></div>
-                <div class="sepBox"><p id="num">=</p></div>
+                <div class="sepBox" onclick="cor()"><p class="characters">Color</p></div>
+                <div class="sepBox" onclick="porcent()"><p class="characters">%</p></div>
+                <div class="sepBox" onclick="quadrado()"><p class="characters">x²</p></div>
+                <div class="sepBox" onclick="div()"><p class="characters">/</p></div>
+                <div class="sepBox" onclick="num1()"><p class="characters">1</p></div>
+                <div class="sepBox" onclick="num2()"><p class="characters">2</p></div>
+                <div class="sepBox" onclick="num3()"><p class="characters">3</p></div>
+                <div class="sepBox" onclick="vezes()"><p class="characters">x</p></div>
+                <div class="sepBox" onclick="num4()"><p class="characters">4</p></div>
+                <div class="sepBox" onclick="num5()"><p class="characters">5</p></div>
+                <div class="sepBox" onclick="num6()"><p class="characters">6</p></div>
+                <div class="sepBox" onclick="menos()"><p class="characters">-</p></div>
+                <div class="sepBox" onclick="num7()"><p class="characters">7</p></div>
+                <div class="sepBox" onclick="num8()"><p class="characters">8</p></div>
+                <div class="sepBox" onclick="num9()"><p class="characters">9</p></div>
+                <div class="sepBox" onclick="mais()"><p class="characters">+</p></div>
+                <div class="sepBox" onclick="posNeg()"><p class="characters">+/-</p></div>
+                <div class="sepBox" onclick="num0()"><p class="characters">0</p></div>
+                <div class="sepBox" onclick="rese()"><p class="characters">R</p></div>
+                <div class="sepBox" onclick="igual()"><p class="characters">=</p></div>
             </div>
         </div>
     </div>
+
+    <script src="./JS/funcCalc.js"></script>
 </body>
 </html>
