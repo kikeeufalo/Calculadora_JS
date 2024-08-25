@@ -1,73 +1,48 @@
-var tela = window.document.getElementById("textRess")
-var a = 0
-var b = 0
-tela.innerText = 0
+var tela = window.document.getElementById("textRess");
+var n1 = ''; //números clicados
+var r = ''; //resultado das operções
 
-function mais() {
-    var soma = a + b
-    tela.innerText += "+"
-}
+function calc(number) {
+    if (number == 1) {
+        tela.innerText += number
+        n1 += '1'
+    }else if (number == 2) {
+        tela.innerText += number
+    }else if (number == 3) {
+        tela.innerText += number
+    }else if (number == 4) {
+        tela.innerText += number
+    }else if (number == 5) {
+        tela.innerText += number
+    }else if (number == 6) {
+        tela.innerText += number
+    }else if (number == 7) {
+        tela.innerText += number
+    }else if (number == 8) {
+        tela.innerText += number
+    }else if (number == 9) {
+        tela.innerText += number
+    }else if (number == 0) {
+        tela.innerText += number
+    };
+};
 
-function rese() {
-    tela.innerText = 0
-}
-function num1() {
-    if (tela.innerText == 0) {
-        tela.innerText = null
-    }
-    tela.innerText += 1
-}
-function num2() {
-    if (tela.innerText == 0) {
-        tela.innerText = null
-    }
-    tela.innerText += 2
-}
-function num3() {
-    if (tela.innerText == 0) {
-        tela.innerText = null
-    }
-    tela.innerText += 3
-}
-function num4() {
-    if (tela.innerText == 0) {
-        tela.innerText = null
-    }
-    tela.innerText += 4
-}
-function num5() {
-    if (tela.innerText == 0) {
-        tela.innerText = null
-    }
-    tela.innerText += 5
-}
-function num6() {
-    if (tela.innerText == 0) {
-        tela.innerText = null
-    }
-    tela.innerText += 6
-}
-function num7() {
-    if (tela.innerText == 0) {
-        tela.innerText = null
-    }
-    tela.innerText += 7
-}
-function num8() {
-    if (tela.innerText == 0) {
-        tela.innerText = null
-    }
-    tela.innerText += 8
-}
-function num9() {
-    if (tela.innerText == 0) {
-        tela.innerText = null
-    }
-    tela.innerText += 9
-}
-function num0() {
-    if (tela.innerText == 0) {
-        tela.innerText = null
-    }
-    tela.innerText += 0
-}
+function caracter(c) {// c == caractere
+    if (tela.innerText) {
+        if (c == '+') {
+            tela.innerText += c
+            r = n1
+        }else if(c == '-') {
+            tela.innerText += c
+        };
+    };
+};
+
+function result() {
+    tela.innerText = r
+    r = ''
+};
+
+function calculo() {
+    r = n1 + n1
+};
