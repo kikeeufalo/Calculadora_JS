@@ -38,4 +38,5 @@
 .characters {
     line-height: 80px;
     text-align: center;
+    z-index: -100;
 }
