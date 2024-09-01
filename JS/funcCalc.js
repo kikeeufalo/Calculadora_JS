@@ -1,48 +1,47 @@
 var tela = window.document.getElementById("textRess");
-var n1 = ''; //números clicados
-var r = ''; //resultado das operções
+var num1 = ''; // primeiro digito da operação
+var num2 = ''; //segundo digito da operação
+var verificador = true; //verifica se pode colocar o sinal do operador
+var opQuantia = true; //verificador para nao colocar mais de um operador
 
-function calc(number) {
-    if (number == 1) {
-        tela.innerText += number
-        n1 += '1'
-    }else if (number == 2) {
-        tela.innerText += number
-    }else if (number == 3) {
-        tela.innerText += number
-    }else if (number == 4) {
-        tela.innerText += number
-    }else if (number == 5) {
-        tela.innerText += number
-    }else if (number == 6) {
-        tela.innerText += number
-    }else if (number == 7) {
-        tela.innerText += number
-    }else if (number == 8) {
-        tela.innerText += number
-    }else if (number == 9) {
-        tela.innerText += number
-    }else if (number == 0) {
-        tela.innerText += number
+function numeros(n) { //função dos numeros
+    if (n == 1) {
+        if (verificador == true) {
+            if (num1 == '') {
+                tela.innerText = ''
+            }
+            tela.innerText += n
+            num1 += n
+        }else if (verificador == false) {
+            tela.innerText += n
+            num2 += n
+        }
     };
 };
 
-function caracter(c) {// c == caractere
-    if (tela.innerText) {
-        if (c == '+') {
-            tela.innerText += c
-            r = n1
-        }else if(c == '-') {
-            tela.innerText += c
+function operadores(o) { //operadores
+    if (opQuantia == true) {
+        if (o == '+' && num1 != '') {
+            tela.innerText += '+'
         };
-    };
+    }
+    opQuantia = false
+    verificador = false
 };
 
-function result() {
-    tela.innerText = r
-    r = ''
+function operacaoResultado() { //resultado das operções
+    var soma = Number(num1) + Number(num2)
+    tela.innerText = soma
+    opQuantia = true
+    verificador = true
+    num1 = ''
+    num2 = ''
 };
 
-function calculo() {
-    r = n1 + n1
+function reset() {
+    tela.innerText = ''
+    num1 = ''
+    num2 = ''
+    verificador = true
+    opQuantia = true
 };
