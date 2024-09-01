@@ -5,7 +5,29 @@ var verificador = true; //verifica se pode colocar o sinal do operador
 var opQuantia = true; //verificador para nao colocar mais de um operador
 
 function numeros(n) { //função dos numeros
-    if (n == 1) {
+    if (n == 1) { //verifica o número passado por parâmetro
+        if (verificador == true) {
+            if (num1 == '') {
+                tela.innerText = ''
+            }
+            tela.innerText += n
+            num1 += n
+        }else if (verificador == false) {
+            tela.innerText += n
+            num2 += n
+        }
+    }else if (n == 2) {
+        if (verificador == true) {
+            if (num1 == '') {
+                tela.innerText = ''
+            }
+            tela.innerText += n
+            num1 += n
+        }else if (verificador == false) {
+            tela.innerText += n
+            num2 += n
+        }
+    }else if (n == 3) {
         if (verificador == true) {
             if (num1 == '') {
                 tela.innerText = ''
