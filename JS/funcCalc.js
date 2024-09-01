@@ -1,4 +1,5 @@
 var tela = window.document.getElementById("textRess");
+var operadorUsado = '' // verifica qual operador esta sendo usado
 var num1 = ''; // primeiro digito da operação
 var num2 = ''; //segundo digito da operação
 var verificador = true; //verifica se pode colocar o número
@@ -121,7 +122,17 @@ function numeros(n) { //função dos numeros
 function operadores(o) { //operadores
     if (opQuantia == true) {
         if (o == '+' && num1 != '') {
-            tela.innerText += '+'
+            tela.innerText += ' + '
+            operadorUsado = o
+        }else if (o == '-' && num1 != '') {
+            tela.innerText += ' - '  
+            operadorUsado = '-'
+        }else if (o == 'x' && num1 != '') {
+            tela.innerText += ' x '
+            operadorUsado = 'x'
+        }else if (o == '/' && num1 != '') {
+            tela.innerText += ' / '
+            operadorUsado = '/'
         };
     }
     opQuantia = false
@@ -129,10 +140,22 @@ function operadores(o) { //operadores
 };
 
 function operacaoResultado() { //resultado das operções
-    var soma = Number(num1) + Number(num2)
-    tela.innerText = soma
+    if (operadorUsado == '+') {
+        var soma = Number(num1) + Number(num2)
+        tela.innerText = soma
+    }else if (operadorUsado == '-') {
+        var subtracao = Number(num1) - Number(num2)
+        tela.innerText = subtracao
+    }else if (operadorUsado == 'x') {
+        var multiplicacao = Number(num1) * Number(num2)
+        tela.innerText = multiplicacao
+    }else if (operadorUsado == '/') {
+        var divisao = Number(num1) / Number(num2)
+        tela.innerText = divisao
+    };
     opQuantia = true
     verificador = true
+    operadorUsado = ''
     num1 = ''
     num2 = ''
 };
