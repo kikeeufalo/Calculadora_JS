@@ -1,8 +1,8 @@
 var tela = window.document.getElementById("textRess");
 var num1 = ''; // primeiro digito da operação
 var num2 = ''; //segundo digito da operação
-var verificador = true; //verifica se pode colocar o sinal do operador
-var opQuantia = true; //verificador para nao colocar mais de um operador
+var verificador = true; //verifica se pode colocar o número
+var opQuantia = true; //verifica se pode colocar um operador ou mais
 
 function numeros(n) { //função dos numeros
     if (n == 1) { //verifica o número passado por parâmetro
@@ -28,6 +28,83 @@ function numeros(n) { //função dos numeros
             num2 += n
         }
     }else if (n == 3) {
+        if (verificador == true) {
+            if (num1 == '') {
+                tela.innerText = ''
+            }
+            tela.innerText += n
+            num1 += n
+        }else if (verificador == false) {
+            tela.innerText += n
+            num2 += n
+        }
+    }else if (n == 4) {
+        if (verificador == true) {
+            if (num1 == '') {
+                tela.innerText = ''
+            }
+            tela.innerText += n
+            num1 += n
+        }else if (verificador == false) {
+            tela.innerText += n
+            num2 += n
+        }
+    }else if (n == 5) {
+        if (verificador == true) {
+            if (num1 == '') {
+                tela.innerText = ''
+            }
+            tela.innerText += n
+            num1 += n
+        }else if (verificador == false) {
+            tela.innerText += n
+            num2 += n
+        }
+    }else if (n == 6) {
+        if (verificador == true) {
+            if (num1 == '') {
+                tela.innerText = ''
+            }
+            tela.innerText += n
+            num1 += n
+        }else if (verificador == false) {
+            tela.innerText += n
+            num2 += n
+        }
+    }else if (n == 7) {
+        if (verificador == true) {
+            if (num1 == '') {
+                tela.innerText = ''
+            }
+            tela.innerText += n
+            num1 += n
+        }else if (verificador == false) {
+            tela.innerText += n
+            num2 += n
+        }
+    }else if (n == 8) {
+        if (verificador == true) {
+            if (num1 == '') {
+                tela.innerText = ''
+            }
+            tela.innerText += n
+            num1 += n
+        }else if (verificador == false) {
+            tela.innerText += n
+            num2 += n
+        }
+    }else if (n == 9) {
+        if (verificador == true) {
+            if (num1 == '') {
+                tela.innerText = ''
+            }
+            tela.innerText += n
+            num1 += n
+        }else if (verificador == false) {
+            tela.innerText += n
+            num2 += n
+        }
+    }else if (n == 0) {
         if (verificador == true) {
             if (num1 == '') {
                 tela.innerText = ''
