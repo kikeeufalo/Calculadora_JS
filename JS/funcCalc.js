@@ -1,9 +1,9 @@
-var tela = window.document.getElementById("textRess");
+var tela = window.document.getElementById("textRess")
 var operadorUsado = '' // verifica qual operador esta sendo usado
-var num1 = ''; // primeiro digito da operação
-var num2 = ''; //segundo digito da operação
-var verificador = true; //verifica se pode colocar o número
-var opQuantia = true; //verifica se pode colocar um operador ou mais
+var num1 = '' // primeiro digito da operação
+var num2 = '' //segundo digito da operação
+var verificador = true //verifica se pode colocar o número
+var opQuantia = true //verifica se pode colocar um operador ou mais
 
 function numeros(n) { //função dos numeros
     if (n == 1) { //verifica o número passado por parâmetro
@@ -116,8 +116,8 @@ function numeros(n) { //função dos numeros
             tela.innerText += n
             num2 += n
         }
-    };
-};
+    }
+}
 
 function operadores(o) { //operadores
     if (opQuantia == true) {
@@ -133,11 +133,11 @@ function operadores(o) { //operadores
         }else if (o == '/' && num1 != '') {
             tela.innerText += ' / '
             operadorUsado = '/'
-        };
+        }
     }
     opQuantia = false
     verificador = false
-};
+}
 
 function operacaoResultado() { //resultado das operções
     if (operadorUsado == '+') {
@@ -152,13 +152,13 @@ function operacaoResultado() { //resultado das operções
     }else if (operadorUsado == '/') {
         var divisao = Number(num1) / Number(num2)
         tela.innerText = divisao
-    };
+    }
     opQuantia = true
     verificador = true
     operadorUsado = ''
     num1 = ''
     num2 = ''
-};
+}
 
 function reset() {
     tela.innerText = ''
@@ -166,4 +166,4 @@ function reset() {
     num2 = ''
     verificador = true
     opQuantia = true
-};
+}
