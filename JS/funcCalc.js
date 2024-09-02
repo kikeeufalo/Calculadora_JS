@@ -133,6 +133,9 @@ function operadores(o) { //operadores
         }else if (o == '/' && num1 != '') {
             tela.innerText += ' / '
             operadorUsado = '/'
+        }else if (o == 'x2' && num1 != '') {
+            tela.innerText += '²'
+            operadorUsado = 'x2'
         }
     }
     opQuantia = false
@@ -152,6 +155,9 @@ function operacaoResultado() { //resultado das operções
     }else if (operadorUsado == '/') {
         var divisao = Number(num1) / Number(num2)
         tela.innerText = divisao
+    }else if (operadorUsado == 'x2') {
+        var numeroAoQuadrado = Number(num1) * Number(num1)
+        tela.innerText = numeroAoQuadrado
     }
     opQuantia = true
     verificador = true
