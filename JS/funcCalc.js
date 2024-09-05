@@ -136,10 +136,29 @@ function operadores(o) { //operadores
         }else if (o == 'x2' && num1 != '') {
             tela.innerText += '²'
             operadorUsado = 'x2'
+        }else if (o == '%' && num1 != '') {
+            tela.innerText += '%'
+            operadorUsado = '%'
         }
     }
     opQuantia = false
     verificador = false
+
+    if (o == '+/-') {
+        if (num1 != '') {
+            if (Number(num1) > 0) {
+                var neg = num1 * -1
+                tela.innerText = neg
+                num1 = neg
+            }else if (Number(num1) < 0) {
+                var pos = num1 * -1
+                tela.innerText = pos
+                num1 = pos
+            }
+        }
+        operadorUsado = '+/-'
+        opQuantia = true
+    }
 }
 
 function operacaoResultado() { //resultado das operções
@@ -158,6 +177,9 @@ function operacaoResultado() { //resultado das operções
     }else if (operadorUsado == 'x2') {
         var numeroAoQuadrado = Number(num1) * Number(num1)
         tela.innerText = numeroAoQuadrado
+    }else if (operadorUsado == '%') {
+        var porcentagem = Number(num1) / 100
+        tela.innerText = porcentagem
     }
     opQuantia = true
     verificador = true
