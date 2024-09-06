@@ -188,6 +188,10 @@ function operacaoResultado() { //resultado das operções
     num2 = ''
 }
 
+function colors() {
+    // funçã para mudar a cor
+}
+
 function reset() {
     tela.innerText = ''
     num1 = ''
