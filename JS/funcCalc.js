@@ -188,8 +188,20 @@ function operacaoResultado() { //resultado das operções
     num2 = ''
 }
 
-function colors() {
-    // funçã para mudar a cor
+function colors() { //função para mudar as cores
+    var fundo = window.document.getElementById("calculadora")
+    var b = window.document.body
+    var colors = [
+        "#911440",
+        "#f6464a",
+        "#f68b7b",
+        "#ffb48f",
+        "#c0b19e"
+    ]
+    const randonColors = colors[Math.floor(Math.random() * colors.length)]
+    const randonfundo = colors[Math.floor(Math.random() * colors.length)]
+    fundo.style.background = randonColors
+    b.style.background = randonfundo
 }
 
 function reset() {
@@ -199,3 +211,10 @@ function reset() {
     verificador = true
     opQuantia = true
 }
+
+/* 
+
+ Projeto simples de uma calcúladora desenvolvida para 
+ ter um pouco mais de conhecimento com a linguagem
+
+*/
