@@ -8,6 +8,7 @@
     border: 1px solid black;
     height: 500px;
     width: 300px;
+    box-shadow: 10px 10px 60px rgba(7, 7, 7, 0.5);
 }
 
 #textRess {
