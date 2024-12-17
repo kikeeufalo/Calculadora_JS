@@ -31,3 +31,10 @@
     grid-column: 2 / 3;
     grid-row: 4 / 4;
 }
+
+.botoes-operadores {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: repeat(5, 83px);
+}
