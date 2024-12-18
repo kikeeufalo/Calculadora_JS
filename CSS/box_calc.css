@@ -63,3 +63,18 @@
     grid-column: 4 / 4;
     grid-row: 4 / 5;
 }
+
+.item-cinco {
+    grid-column: 4 / 4;
+    grid-row: 3 / 5;
+}
+
+.item-seis {
+    grid-column: 4 / 4;
+    grid-row: 2 / 5;
+}
+
+.item-sete {
+    grid-column: 4 / 4;
+    grid-row: 1 / 5;
+}
