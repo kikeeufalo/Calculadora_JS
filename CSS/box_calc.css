@@ -1,3 +1,7 @@
+body {
+    background-color: #4d686f;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -10,7 +14,7 @@
     border: 1px solid black;
     min-height: 500px;
     min-width: 302px;
-    box-shadow: 10px 10px 60px rgba(7, 7, 7, 0.5);
+    box-shadow: 5px 5px 100px #364461;
 }
 
 /* parte dos botoes */
@@ -100,14 +104,18 @@
     height: 83px;
     border: 1px solid black;
     position: relative;
+    background-color: #bfa374c6;
 }
 
 .resposta-display {
-    background-color: red;
     width: 100%;
     position: absolute;
     text-align: end;
     padding: 10px;
     font-size: 40pt;
     font-weight: 400;
+}
+
+button {
+    background-color: #e3bb6ab1;
 }
