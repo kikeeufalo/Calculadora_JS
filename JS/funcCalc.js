@@ -6,14 +6,14 @@ const numeros = containerNumeros.querySelectorAll('button')
 let buttonClicadosA = ''
 
 
-
+operadores
 
 // parte dos numeros/valores dos botoes
 numeros.forEach((num) => {
     num.addEventListener('click', function() {
         
-        botoesClicados += num.textContent
+        buttonClicadosA += num.textContent
 
-        console.log(botoesClicados)
+        console.log(buttonClicadosA)
     })
 })
