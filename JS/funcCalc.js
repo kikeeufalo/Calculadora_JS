@@ -5,18 +5,69 @@ const numeros = containerNumeros.querySelectorAll('button')
 
 let buttonClicadoA = ''
 let buttonClicadoB = ''
-let calculo = []
+let calculo = ''
+let r = 0
 
 let ordem = true
 
 // parte dos operadores
 operadores.forEach((oper) => {
     oper.addEventListener('click', function () {
+
+        if (oper.textContent == ',') {
+            buttonClicadoA += ','
+        }
+        if (oper.textContent == 'Del') {
+            
+        }
+        if (oper.textContent == '%') {
+            
+        }
+
+
         ordem = false
-        
+
         switch (oper.textContent) {
             case '+':
-                console.log('pop')
+                calculo += '+'
+                break
+            case '-':
+                calculo += '-'
+                break
+            case 'x':
+                calculo += '*'
+                break
+            case '/':
+                calculo += '/'
+                break
+            case 'Del':
+                // O del irá apagar o button que está sendo escrito ou ambos, apenas mantendo a resposta?
+                if (buttonClicadoA) {
+                    this.textContent = ''
+                } else {
+                    buttonClicadoB.textContent = ''
+                }
+                break
+            case 'C':
+                buttonClicadoA = ""
+                buttonClicadoB = ""
+                calculo = ""
+                r = ""
+
+                ordem = true
+                break
+            case '=':
+                if (calculo != "") {
+                    r = eval(`${parseFloat(buttonClicadoA)} ${calculo} ${parseFloat(buttonClicadoB)}`)
+                    buttonClicadoA = ""
+                    buttonClicadoB = ""
+                    calculo = ""
+                }
+                
+                console.log(r)
+                
+                ordem = true
+                
                 break
         }
 
@@ -31,7 +82,7 @@ numeros.forEach((num) => {
         if (ordem) {
             buttonClicadoA += num.textContent
             console.log('a', buttonClicadoA)
-        }else {
+        } else {
             buttonClicadoB += num.textContent
             console.log('b', buttonClicadoB)
         }
