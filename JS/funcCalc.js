@@ -29,8 +29,8 @@ operadores.forEach((oper) => {
 
         switch (oper.textContent) {
             case '+/-':
-                
-            
+                r *= -1    
+
                 break
             case '+':
                 calculo += '+'
@@ -57,9 +57,11 @@ operadores.forEach((oper) => {
                 ordem = true
                 break
             case '=':
+                if (buttonClicadoB == '') return
+
                 if (calculo != "") {
                     r = eval(`${parseFloat(buttonClicadoA)} ${calculo} ${parseFloat(buttonClicadoB)}`)
-                    
+
                     console.log(`${buttonClicadoA} ${calculo} ${buttonClicadoB} = ${r}`)
 
                     buttonClicadoA = ""
@@ -67,10 +69,7 @@ operadores.forEach((oper) => {
                     calculo = ""
                 }
                 
-                
-                
                 ordem = true
-                
                 break
         }
     })
