@@ -124,5 +124,10 @@ button {
 
 button:hover {
     cursor: pointer;
-    background-color: #d5b16a;
+    background-color: #947840a0;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #947840;
 }
