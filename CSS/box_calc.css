@@ -118,6 +118,13 @@ body {
     font-weight: 400;
 }
 
+.digitos {
+    position: absolute;
+    padding: 7px;
+    bottom: 0;
+    font-size: 14px;
+}
+
 button {
     background-color: #e3bb6ab1;
 }
