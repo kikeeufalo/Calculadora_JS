@@ -52,26 +52,27 @@ operadores.forEach((oper) => {
                 buttonClicadoA = ""
                 buttonClicadoB = ""
                 calculo = ""
-                r = ""
+                r = 0
 
                 ordem = true
                 break
             case '=':
                 if (calculo != "") {
                     r = eval(`${parseFloat(buttonClicadoA)} ${calculo} ${parseFloat(buttonClicadoB)}`)
+                    
+                    console.log(`${buttonClicadoA} ${calculo} ${buttonClicadoB} = ${r}`)
+
                     buttonClicadoA = ""
                     buttonClicadoB = ""
                     calculo = ""
                 }
                 
-                console.log(r)
+                
                 
                 ordem = true
                 
                 break
         }
-
-        console.log(oper.textContent)
     })
 })
 
@@ -81,10 +82,8 @@ numeros.forEach((num) => {
 
         if (ordem) {
             buttonClicadoA += num.textContent
-            console.log('a', buttonClicadoA)
         } else {
             buttonClicadoB += num.textContent
-            console.log('b', buttonClicadoB)
         }
 
     })
