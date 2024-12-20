@@ -28,25 +28,25 @@ operadores.forEach((oper) => {
         ordem = false
 
         switch (oper.textContent) {
+            case '+/-':
+                
+            
+                break
             case '+':
                 calculo += '+'
+                
                 break
             case '-':
                 calculo += '-'
+                
                 break
             case 'x':
                 calculo += '*'
+                
                 break
             case '/':
                 calculo += '/'
-                break
-            case 'Del':
-                // O del irá apagar o button que está sendo escrito ou ambos, apenas mantendo a resposta?
-                if (buttonClicadoA) {
-                    this.textContent = ''
-                } else {
-                    buttonClicadoB.textContent = ''
-                }
+
                 break
             case 'C':
                 buttonClicadoA = ""
