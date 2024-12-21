@@ -21,7 +21,8 @@ operadores.forEach((oper) => {
             
         }
         if (oper.textContent == '%') {
-            // 
+            r = eval(`${parseFloat(buttonClicadoA)} ${calculo} ${parseFloat(buttonClicadoB)}`) / 100
+            console.log(r)
         }
 
 
@@ -54,6 +55,7 @@ operadores.forEach((oper) => {
                 calculo = ""
                 r = 0
 
+                console.log(r)
                 ordem = true
                 break
             case '=':
