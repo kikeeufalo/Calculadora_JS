@@ -21,7 +21,9 @@ operadores.forEach((oper) => {
             
         }
         if (oper.textContent == '%') {
+            //
             r = eval(`${parseFloat(buttonClicadoA)} ${calculo} ${parseFloat(buttonClicadoB)}`) / 100
+            //
             console.log(r)
         }
 
