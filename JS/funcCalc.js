@@ -21,7 +21,7 @@ operadores.forEach((oper) => {
             
         }
         if (oper.textContent == '%') {
-            
+            // 
         }
 
 
@@ -30,7 +30,7 @@ operadores.forEach((oper) => {
         switch (oper.textContent) {
             case '+/-':
                 r *= -1    
-
+                // atualizar no display
                 break
             case '+':
                 calculo += '+'
