@@ -56,6 +56,9 @@ operadores.forEach((oper) => {
 
                 break
             case 'C':
+                displayConta.textContent = 0
+                displayResult.textContent = 0
+
                 buttonClicadoA = ""
                 buttonClicadoB = ""
                 calculo = ""
@@ -65,9 +68,16 @@ operadores.forEach((oper) => {
                 ordem = true
                 break
             case '=':
-                if (buttonClicadoB == '' || buttonClicadoA == '') return
+                if (buttonClicadoB == '' || buttonClicadoA == '' && calculo == '') return
 
                 if (calculo != "") {
+                    if (buttonClicadoA == '') {
+                        r = eval(`${r} ${calculo} ${buttonClicadoB}`)
+                        displayResult.textContent = r
+
+                        return
+                    }
+                    
                     r = eval(`${parseFloat(buttonClicadoA)} ${calculo} ${parseFloat(buttonClicadoB)}`)
 
                     displayResult.textContent = r
@@ -88,11 +98,14 @@ numeros.forEach((num) => {
     num.addEventListener('click', function () {
 
         if (ordem) {
+
             buttonClicadoA += num.textContent
             displayConta.textContent += num.textContent
         } else {
+
             buttonClicadoB += num.textContent
             displayConta.textContent += num.textContent
+
         }
 
     })
