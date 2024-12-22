@@ -13,7 +13,7 @@ let ordem = true
 // parte dos operadores
 operadores.forEach((oper) => {
     oper.addEventListener('click', function () {
-
+        
         if (oper.textContent == ',') {
             buttonClicadoA += ','
         }
@@ -21,9 +21,7 @@ operadores.forEach((oper) => {
             
         }
         if (oper.textContent == '%') {
-            //
             r = eval(`${parseFloat(buttonClicadoA)} ${calculo} ${parseFloat(buttonClicadoB)}`) / 100
-            //
             console.log(r)
         }
 
