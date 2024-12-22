@@ -121,7 +121,7 @@ body {
 
 .digitos {
     position: absolute;
-    padding: 7px;
+    padding: 5px 0 0 10px;
     bottom: 0;
     font-size: 16px;
     letter-spacing: 3px;
