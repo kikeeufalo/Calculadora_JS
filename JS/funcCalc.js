@@ -70,7 +70,7 @@ operadores.forEach((oper) => {
                 if (calculo != "") {
                     r = eval(`${parseFloat(buttonClicadoA)} ${calculo} ${parseFloat(buttonClicadoB)}`)
 
-                    console.log(`${buttonClicadoA} ${calculo} ${buttonClicadoB} = ${r}`)
+                    displayResult.textContent = r
 
                     buttonClicadoA = ""
                     buttonClicadoB = ""
