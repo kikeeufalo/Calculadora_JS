@@ -80,20 +80,10 @@ operadores.forEach((oper) => {
                 break
             case '=':
                 if (limiteCaracteres(8)) return
-                if (buttonClicadoB == '' || buttonClicadoA == '' && calculo == '') return
 
                 if (calculo != "") {
-                    if (buttonClicadoA == '') {
-                        r = eval(`${r} ${calculo} ${buttonClicadoB}`)
-                        displayResult.textContent = r
-                        buttonClicadoA = ""
-                        buttonClicadoB = ""
-                        calculo = ""
-
-                        return
-                    }
-
-                    r = eval(`${displayConta.textContent}`)
+                    let textoConta = displayConta.textContent
+                    r = eval(`${textoConta}`)
 
                     displayResult.textContent = r
 
