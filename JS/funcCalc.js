@@ -2,6 +2,8 @@ const containerNumeros = document.querySelector('.botoesNumeros')
 const containerOperadores = document.querySelector('.botoes-operadores')
 const operadores = containerOperadores.querySelectorAll('button')
 const numeros = containerNumeros.querySelectorAll('button')
+const displayConta = document.querySelector('#numerosConta')
+const displayResult = document.querySelector('#resposta')
 
 let buttonClicadoA = ''
 let buttonClicadoB = ''
@@ -15,10 +17,10 @@ operadores.forEach((oper) => {
     oper.addEventListener('click', function () {
 
         if (oper.textContent == ',') {
-            buttonClicadoA += ','
+
         }
         if (oper.textContent == 'Del') {
-            
+
         }
         if (oper.textContent == '%') {
             r = eval(`${parseFloat(buttonClicadoA)} ${calculo} ${parseFloat(buttonClicadoB)}`) / 100
@@ -30,23 +32,27 @@ operadores.forEach((oper) => {
 
         switch (oper.textContent) {
             case '+/-':
-                r *= -1    
+                r *= -1
                 // atualizar no display
                 break
             case '+':
                 calculo += '+'
-                
+                displayConta.textContent += oper.textContent
+
                 break
             case '-':
                 calculo += '-'
-                
+                displayConta.textContent += oper.textContent
+
                 break
             case 'x':
                 calculo += '*'
-                
+                displayConta.textContent += oper.textContent
+
                 break
             case '/':
                 calculo += '/'
+                displayConta.textContent += oper.textContent
 
                 break
             case 'C':
@@ -70,7 +76,7 @@ operadores.forEach((oper) => {
                     buttonClicadoB = ""
                     calculo = ""
                 }
-                
+
                 ordem = true
                 break
         }
@@ -83,8 +89,10 @@ numeros.forEach((num) => {
 
         if (ordem) {
             buttonClicadoA += num.textContent
+            displayConta.textContent += num.textContent
         } else {
             buttonClicadoB += num.textContent
+            displayConta.textContent += num.textContent
         }
 
     })
