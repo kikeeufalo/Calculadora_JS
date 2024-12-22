@@ -123,7 +123,9 @@ body {
     position: absolute;
     padding: 7px;
     bottom: 0;
-    font-size: 14px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    
 }
 
 button {
