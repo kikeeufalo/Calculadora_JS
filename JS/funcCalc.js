@@ -12,14 +12,17 @@ let r = 0
 
 let ordem = true
 
+// limites de caracteres
+function limiteCaracteres(limite) {
+    let caracteres = displayConta.textContent
+    return caracteres.length >= limite
+}
+
 // parte dos operadores
 operadores.forEach((oper) => {
     oper.addEventListener('click', function () {
 
         if (oper.textContent == ',') {
-
-        }
-        if (oper.textContent == 'Del') {
 
         }
         if (oper.textContent == '%') {
@@ -33,7 +36,7 @@ operadores.forEach((oper) => {
         switch (oper.textContent) {
             case '+/-':
                 r *= -1
-                // atualizar no display
+                displayResult.textContent = r
                 break
             case '+':
                 calculo += '+'
@@ -55,8 +58,16 @@ operadores.forEach((oper) => {
                 displayConta.textContent += oper.textContent
 
                 break
+            case 'Del':
+                if (displayConta.length <= 0) return
+
+                let deleteCaractere = displayConta.textContent
+                displayConta.textContent = deleteCaractere.slice(0, -1)
+                console.log(this.textContent)
+            
+                break
             case 'C':
-                displayConta.textContent = 0
+                displayConta.textContent = ''
                 displayResult.textContent = 0
 
                 buttonClicadoA = ""
@@ -68,17 +79,21 @@ operadores.forEach((oper) => {
                 ordem = true
                 break
             case '=':
+                if (limiteCaracteres(8)) return
                 if (buttonClicadoB == '' || buttonClicadoA == '' && calculo == '') return
 
                 if (calculo != "") {
                     if (buttonClicadoA == '') {
                         r = eval(`${r} ${calculo} ${buttonClicadoB}`)
                         displayResult.textContent = r
+                        buttonClicadoA = ""
+                        buttonClicadoB = ""
+                        calculo = ""
 
                         return
                     }
-                    
-                    r = eval(`${parseFloat(buttonClicadoA)} ${calculo} ${parseFloat(buttonClicadoB)}`)
+
+                    r = eval(`${displayConta.textContent}`)
 
                     displayResult.textContent = r
 
@@ -96,13 +111,12 @@ operadores.forEach((oper) => {
 // parte dos numeros/valores dos botoes
 numeros.forEach((num) => {
     num.addEventListener('click', function () {
+        if (limiteCaracteres(20)) return
 
         if (ordem) {
-
             buttonClicadoA += num.textContent
             displayConta.textContent += num.textContent
         } else {
-
             buttonClicadoB += num.textContent
             displayConta.textContent += num.textContent
 
