@@ -13,7 +13,7 @@ let ordem = true
 // parte dos operadores
 operadores.forEach((oper) => {
     oper.addEventListener('click', function () {
-        
+
         if (oper.textContent == ',') {
             buttonClicadoA += ','
         }
@@ -59,7 +59,7 @@ operadores.forEach((oper) => {
                 ordem = true
                 break
             case '=':
-                if (buttonClicadoB == '') return
+                if (buttonClicadoB == '' || buttonClicadoA == '') return
 
                 if (calculo != "") {
                     r = eval(`${parseFloat(buttonClicadoA)} ${calculo} ${parseFloat(buttonClicadoB)}`)
