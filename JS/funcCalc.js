@@ -20,43 +20,44 @@ operadores.forEach((oper) => {
             case '=':
                 let primeiroStr = conta.charAt(conta.length - 1)
                 let especial = "+-/,.*%".includes(primeiroStr)
+                if (limiteCaracteres(8)) return
                 if (especial) return
-
                 displayResult.textContent = eval(conta)
-                console.log(conta)
+                conta = ''
+                displayConta.textContent = ''
                 return
-            break
+                break
             case 'x':
                 conta += '*'
                 displayConta.textContent += 'x'
                 return
-            break
+                break
             case '%':
                 displayResult.textContent = eval(conta) / 100
                 displayConta.textContent += '%'
                 return
-            break
+                break
             case 'C':
                 displayConta.textContent = ''
                 displayResult.textContent = '0'
                 conta = ''
                 return
-            break
+                break
             case 'Del':
                 let c = displayConta.textContent
                 displayConta.textContent = c.slice(0, -1)
                 conta = conta.slice(0, -1)
                 return
-            break
+                break
             case '+/-':
                 displayResult.textContent *= -1
                 return
-            break
+                break
             case ',':
                 conta += '.'
                 displayConta.textContent += ','
                 return
-            break
+                break
         }
         displayConta.textContent += oper.textContent
         conta += oper.textContent
