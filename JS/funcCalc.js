@@ -16,7 +16,6 @@ function limiteCaracteres(limite) {
 // parte dos operadores
 operadores.forEach((oper) => {
     oper.addEventListener('click', function () {
-
         switch (oper.textContent) {
             case '=':
                 displayResult.textContent = eval(conta)
@@ -27,11 +26,24 @@ operadores.forEach((oper) => {
                 displayConta.textContent += 'x'
                 return
             break
+            case '%':
+                displayResult.textContent = eval(conta) / 100
+                displayConta.textContent += '%'
+                return
+            break
+            case 'C':
+                
+                return
+            break
+            case 'Del':
+                return
+            break
+            case '+/-':
+                return
+            break
         }
-
         displayConta.textContent += oper.textContent
         conta += oper.textContent
-        
     })
 })
 
