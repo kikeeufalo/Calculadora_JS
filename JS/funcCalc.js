@@ -17,13 +17,14 @@ function limiteCaracteres(limite) {
 operadores.forEach((oper) => {
     oper.addEventListener('click', function () {
         ordem = false
-        
-        switch (oper.textContent) {
-            case '=':
 
-
-                break
+        if (oper.textContent == '=') {
+            displayResult.textContent = eval(displayConta.textContent)
+            return
         }
+
+        displayConta.textContent += oper.textContent
+        
     })
 })
 
