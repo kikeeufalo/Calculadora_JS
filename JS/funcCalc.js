@@ -23,10 +23,14 @@ operadores.forEach((oper) => {
                 return
             break
             case 'x':
+                conta += '*'
+                displayConta.textContent += 'x'
+                return
             break
         }
 
         displayConta.textContent += oper.textContent
+        conta += oper.textContent
         
     })
 })
@@ -36,6 +40,6 @@ numeros.forEach((num) => {
     num.addEventListener('click', function () {
         if (limiteCaracteres(20)) return
         displayConta.textContent += num.textContent
-        conta = num.textContent
+        conta += num.textContent
     })
 })
