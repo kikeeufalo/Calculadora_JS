@@ -18,6 +18,9 @@ operadores.forEach((oper) => {
     oper.addEventListener('click', function () {
         switch (oper.textContent) {
             case '=':
+                let primeiroStr = conta.charAt(conta.length - 1)
+                let especial = "+-/,.*%".includes(primeiroStr)
+                if (especial) return
                 displayResult.textContent = eval(conta)
                 return
             break
@@ -32,13 +35,19 @@ operadores.forEach((oper) => {
                 return
             break
             case 'C':
-                
+                displayConta.textContent = ''
+                displayResult.textContent = '0'
+                conta = ''
                 return
             break
             case 'Del':
+                let c = displayConta.textContent
+                displayConta.textContent = c.slice(0, -1)
+                conta = conta.slice(0, -1)
                 return
             break
             case '+/-':
+                displayResult.textContent *= -1
                 return
             break
         }
