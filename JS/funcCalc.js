@@ -19,7 +19,7 @@ operadores.forEach((oper) => {
 
         switch (oper.textContent) {
             case '=':
-                displayResult.textContent = eval(displayConta.textContent)
+                displayResult.textContent = eval(conta)
                 return
             break
             case 'x':
@@ -36,5 +36,6 @@ numeros.forEach((num) => {
     num.addEventListener('click', function () {
         if (limiteCaracteres(20)) return
         displayConta.textContent += num.textContent
+        conta = num.textContent
     })
 })
