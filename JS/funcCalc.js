@@ -6,6 +6,7 @@ const displayConta = document.querySelector('#numerosConta')
 const displayResult = document.querySelector('#resposta')
 
 let conta = ''
+let zeraConta = false
 
 // limites de caracteres
 function limiteCaracteres(limite) {
@@ -24,7 +25,7 @@ operadores.forEach((oper) => {
                 if (especial) return
                 displayResult.textContent = eval(conta)
                 conta = ''
-                displayConta.textContent = ''
+                zeraConta = true
                 return
                 break
             case 'x':
@@ -35,6 +36,8 @@ operadores.forEach((oper) => {
             case '%':
                 displayResult.textContent = eval(conta) / 100
                 displayConta.textContent += '%'
+                conta = ''
+                zeraConta = true
                 return
                 break
             case 'C':
@@ -68,6 +71,12 @@ operadores.forEach((oper) => {
 numeros.forEach((num) => {
     num.addEventListener('click', function () {
         if (limiteCaracteres(20)) return
+        if (zeraConta) {
+            conta = ''
+            displayConta.textContent = ''
+            displayResult.textContent = '0'
+            zeraConta = false
+        }
         displayConta.textContent += num.textContent
         conta += num.textContent
     })
