@@ -21,7 +21,9 @@ operadores.forEach((oper) => {
                 let primeiroStr = conta.charAt(conta.length - 1)
                 let especial = "+-/,.*%".includes(primeiroStr)
                 if (especial) return
+
                 displayResult.textContent = eval(conta)
+                console.log(conta)
                 return
             break
             case 'x':
@@ -48,6 +50,11 @@ operadores.forEach((oper) => {
             break
             case '+/-':
                 displayResult.textContent *= -1
+                return
+            break
+            case ',':
+                conta += '.'
+                displayConta.textContent += ','
                 return
             break
         }
