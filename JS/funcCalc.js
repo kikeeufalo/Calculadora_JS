@@ -5,7 +5,7 @@ const numeros = containerNumeros.querySelectorAll('button')
 const displayConta = document.querySelector('#numerosConta')
 const displayResult = document.querySelector('#resposta')
 
-let ordem = true
+let conta = ''
 
 // limites de caracteres
 function limiteCaracteres(limite) {
@@ -16,11 +16,14 @@ function limiteCaracteres(limite) {
 // parte dos operadores
 operadores.forEach((oper) => {
     oper.addEventListener('click', function () {
-        ordem = false
 
-        if (oper.textContent == '=') {
-            displayResult.textContent = eval(displayConta.textContent)
-            return
+        switch (oper.textContent) {
+            case '=':
+                displayResult.textContent = eval(displayConta.textContent)
+                return
+            break
+            case 'x':
+            break
         }
 
         displayConta.textContent += oper.textContent
@@ -32,13 +35,6 @@ operadores.forEach((oper) => {
 numeros.forEach((num) => {
     num.addEventListener('click', function () {
         if (limiteCaracteres(20)) return
-
-        if (ordem) {
-            displayConta.textContent += num.textContent
-        } else {
-            displayConta.textContent += num.textContent
-
-        }
-
+        displayConta.textContent += num.textContent
     })
 })
