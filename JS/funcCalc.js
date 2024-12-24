@@ -21,8 +21,10 @@ operadores.forEach((oper) => {
         if (contaAuto) {
             displayConta.textContent = eval(conta)
             displayResult.textContent = eval(conta)
+            zeraConta = false
         }
 
+        contaAuto = true
         
         switch (oper.textContent) {
             case '=':
@@ -32,7 +34,7 @@ operadores.forEach((oper) => {
                 if (especial) return
                 displayResult.textContent = eval(conta)
                 conta = ''
-                zeraConta = true
+                contaAuto = false
                 return
                 break
             case 'x':
@@ -44,34 +46,37 @@ operadores.forEach((oper) => {
                 displayResult.textContent = eval(conta) / 100
                 displayConta.textContent += '%'
                 conta = ''
-                zeraConta = true
+                contaAuto = false
                 return
                 break
             case 'C':
                 displayConta.textContent = ''
                 displayResult.textContent = '0'
                 conta = ''
+                contaAuto = false
                 return
                 break
             case 'Del':
                 let c = displayConta.textContent
                 displayConta.textContent = c.slice(0, -1)
                 conta = conta.slice(0, -1)
+                contaAuto = false
                 return
                 break
             case '+/-':
                 displayResult.textContent *= -1
+                contaAuto = false
                 return
                 break
             case ',':
                 conta += '.'
                 displayConta.textContent += ','
+                contaAuto = false
                 return
                 break
         }
         displayConta.textContent += oper.textContent
         conta += oper.textContent
-        contaAuto = true
     })
 })
 
