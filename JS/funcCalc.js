@@ -7,6 +7,7 @@ const displayResult = document.querySelector('#resposta')
 
 let conta = ''
 let zeraConta = false
+let contaAuto = false
 
 // limites de caracteres
 function limiteCaracteres(limite) {
@@ -17,6 +18,12 @@ function limiteCaracteres(limite) {
 // parte dos operadores
 operadores.forEach((oper) => {
     oper.addEventListener('click', function () {
+        if (contaAuto) {
+            displayConta.textContent = eval(conta)
+            displayResult.textContent = eval(conta)
+        }
+
+        
         switch (oper.textContent) {
             case '=':
                 let primeiroStr = conta.charAt(conta.length - 1)
@@ -64,6 +71,7 @@ operadores.forEach((oper) => {
         }
         displayConta.textContent += oper.textContent
         conta += oper.textContent
+        contaAuto = true
     })
 })
 
